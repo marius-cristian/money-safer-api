@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Backend API for money-safer",
   "author": "Martin Gecnhev",
+  "main": "app.js",
+  "scripts": {
+    "start" : "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",

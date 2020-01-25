@@ -34,7 +34,6 @@ app.use('/api', require('./routes/apiRoutes'));
 const port = process.env.PORT || 3000;
 
 
-    app.listen(port, () => {
-        console.log(`Money-safer app listening on port ${port}!`)
-    });
-
+app.listen(port, () => {
+    console.log(`Money-safer app listening on port ${port}!`)
+});

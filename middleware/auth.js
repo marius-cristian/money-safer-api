@@ -1,14 +1,14 @@
 const jwt = require('jsonwebtoken');
 const userModel = require('../models').Users;
 const TokenModel = require('../models').access_tokens;
-
+const envFile = require ("../env.json");
 const auth = async(req, res, next) =>{
 
     try{
         const token = req.header('Authorization').replace('Bearer ','');
         console.log(token);
         // TODO put the secret key in ENV file. DON"T expose it like that
-        const decoded = jwt.verify(token, "wlkerjfpowu5lkwfiustlk3459uqeflkjsdtlku345oq");
+        const decoded = jwt.verify(token, envFile.secretKey);
 
         const user = await userModel.findOne({
             where:{id: decoded.id},

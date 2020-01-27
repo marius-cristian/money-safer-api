@@ -1,6 +1,5 @@
-const TokenModel = require('../models').access_tokens;
 const Handler = require('../middleware/generic_handler');
-const Users = require('../models/users_queries');
+const Users = require('../db_queries/users_queries');
 const jwt = require('jsonwebtoken');
 
 

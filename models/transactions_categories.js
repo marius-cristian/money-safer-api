@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Transactions_categories = sequelize.define('Transactions_categories', {
     category_name: {

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Backend API for money-safer",
   "author": "Martin Gecnhev",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
@@ -12,6 +16,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.2"
+    "sequelize": "^5.21.2",
+    "morgan": "^1.9.1"
   }
 }

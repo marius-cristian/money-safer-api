@@ -1,6 +1,7 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
-  const access_tokens = sequelize.define('access_tokens', {
+  let access_tokens = sequelize.define('access_tokens', {
     token: {
       type: DataTypes.STRING,
       allowNull:false
@@ -17,5 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       onDelete:'CASCADE'
     })
   };
+  
   return access_tokens;
 };

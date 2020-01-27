@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Transactions = sequelize.define('Transactions', {
+  let Transactions = sequelize.define('Transactions', {
     transaction_type:{
       type: DataTypes.BOOLEAN,
       allowNull:false

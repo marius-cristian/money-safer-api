@@ -30,13 +30,14 @@ exports.loginUser = function (req, res, next){
       , (userInfo) => {
         switch (userInfo.validPassword(req.body.password)){
             case true: {
-                // JWT tokens expire; You don't need to save them in the DB
-                // If you save the JWT in the database, you kind of miss the point
-                // of using JWt, and you could simply generate a random string
+                // JWT tokens are stateless - they expire;
+                // You don't need to save them in the DB
+                // If you save the JWT in the database, you kind of miss the point,
+                // and you could simply generate a random string
                 // from a crypto library;
                 const token  = jwt.sign({id: userInfo.dataValues.id}
                                       , req.app.get('secretKey')
-                                      , { expiresIn: '1h' }); // Set Expiration of token.
+                                      , { expiresIn: '2h' }); // Set Expiration of token.
                 let result   = {...userInfo.dataValues};
                 result.token = token;
                 delete result.id;       // Why do you want to delete the id?

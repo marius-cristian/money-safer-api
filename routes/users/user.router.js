@@ -1,7 +1,6 @@
 const publicRouter = require('express').Router({ mergeParams: true });
 const protectedRouter = require('express').Router({ mergeParams: true });
-
-const userController = require('../../controllers/userController')();
+const userController = require('../../controllers/userController');
 
 publicRouter.post("/create-user", userController.createUser);
 publicRouter.post("/login", userController.loginUser);

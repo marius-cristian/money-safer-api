@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 5;
 
 module.exports = (sequelize, DataTypes) => {
-  const Users = sequelize.define('Users', {
+  let Users = sequelize.define('Users', {
     username:{
       type: DataTypes.STRING,
       allowNull:false,
@@ -72,5 +72,6 @@ module.exports = (sequelize, DataTypes) => {
       as:'user_tokens'
     })
   };
+
   return Users;
 };

@@ -6,3 +6,6 @@ stop-postgres:
 
 connect-postgres:
 	psql -h localhost -U postgres -d postgres --password
+
+run-dev:
+	npm start

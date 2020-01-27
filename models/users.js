@@ -1,4 +1,8 @@
 'use strict';
+
+const bcrypt = require('bcrypt');
+const saltRounds = 5;
+
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     username:{
@@ -26,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
-    adress: {
+    adress: { // English typo; address is the correct form
       type: DataTypes.STRING
     },
     country_id:{
@@ -43,7 +47,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false
     }
-      });
+  });
+
+  Users.beforeCreate((user, options) => {
+    user.password = bcrypt.hashSync(user.password, saltRounds);
+  });
+
+  Users.prototype.validPassword = function (password){
+    return bcrypt.compare(password, this.password);
+  };
+
   Users.associate = function(models) {
     // associations can be defined here
     Users.belongsTo(models.Countries,{

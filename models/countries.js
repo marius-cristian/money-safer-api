@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Countries = sequelize.define('Countries', {
     country_name:{

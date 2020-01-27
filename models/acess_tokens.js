@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const access_tokens = sequelize.define('access_tokens', {
     token: {

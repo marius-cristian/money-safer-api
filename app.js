@@ -40,7 +40,7 @@ function validate_user(req,res,next){
       res.json({status:401, data:null});
     }else{
       // add user id to request
-      req.body.userId = decoded.id;
+      req.body.id = decoded.id;
       next();
     }
   }); 
